@@ -62,23 +62,23 @@ export default function LoadingScreen({ onFinish }) {
 
   return (
     <div 
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-white via-slate-50 to-emerald-50/50 text-slate-900 transition-opacity duration-500 ${
+      className={`fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-[#070b14] via-[#0b1120] to-[#041a12] text-slate-100 transition-opacity duration-500 ${
         isFadingOut ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
     >
       {/* Background Subtle Decorative Rings */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none flex items-center justify-center">
-        <div className="w-[500px] h-[500px] rounded-full border border-emerald-500/10 animate-ping duration-1000" />
-        <div className="w-[750px] h-[750px] rounded-full border border-teal-500/10 animate-pulse duration-700" />
+        <div className="w-[500px] h-[500px] rounded-full border border-emerald-500/20 animate-ping duration-1000" />
+        <div className="w-[750px] h-[750px] rounded-full border border-teal-500/15 animate-pulse duration-700" />
       </div>
 
-      {/* Main White Card Container */}
-      <div className="relative z-10 max-w-md w-full mx-4 p-8 bg-white/95 backdrop-blur-xl rounded-3xl border border-slate-200/90 shadow-2xl text-center space-y-6">
+      {/* Main Dark Card Container */}
+      <div className="relative z-10 max-w-md w-full mx-4 p-8 bg-slate-900/90 backdrop-blur-2xl rounded-3xl border border-slate-800 shadow-2xl shadow-emerald-950/50 text-center space-y-6">
         
         {/* Animated Brand Logo with Glowing Rings */}
         <div className="relative mx-auto w-24 h-24 flex items-center justify-center">
-          <div className="absolute inset-0 rounded-3xl bg-emerald-500/20 blur-xl animate-pulse" />
-          <div className="relative w-20 h-20 rounded-3xl bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-700 flex items-center justify-center text-white shadow-lg shadow-emerald-600/30 border border-emerald-400/30">
+          <div className="absolute inset-0 rounded-3xl bg-emerald-500/30 blur-xl animate-pulse" />
+          <div className="relative w-20 h-20 rounded-3xl bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-700 flex items-center justify-center text-white shadow-lg shadow-emerald-600/40 border border-emerald-400/40">
             <HeartHandshake className="w-10 h-10 animate-pulse" />
           </div>
           <div className="absolute -bottom-1 -right-1 w-7 h-7 rounded-full bg-emerald-500 flex items-center justify-center text-white shadow-md">
@@ -88,19 +88,19 @@ export default function LoadingScreen({ onFinish }) {
 
         {/* Title and Ministry Badges */}
         <div>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold mb-2 shadow-2xs">
-            <Sparkles className="w-3.5 h-3.5 text-emerald-600 animate-spin" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-800/80 text-emerald-400 text-xs font-semibold mb-2 shadow-2xs">
+            <Sparkles className="w-3.5 h-3.5 text-emerald-400 animate-spin" />
             <span>NHM & ICDS Healthcare Suite</span>
           </div>
 
-          <h1 className="text-3xl font-black tracking-tight text-slate-900 flex items-center justify-center gap-2">
+          <h1 className="text-3xl font-black tracking-tight text-white flex items-center justify-center gap-2">
             <span>AshaMitra</span>
-            <span className="text-emerald-700 text-xl font-normal font-sans">
+            <span className="text-emerald-400 text-xl font-normal font-sans">
               (आशा मित्र)
             </span>
           </h1>
 
-          <p className="text-xs text-slate-500 mt-1.5 leading-relaxed font-medium">
+          <p className="text-xs text-slate-400 mt-1.5 leading-relaxed font-medium">
             Digital Decision Support System for Frontline Healthcare Workers
           </p>
         </div>
@@ -108,39 +108,39 @@ export default function LoadingScreen({ onFinish }) {
         {/* Dynamic Progress Bar */}
         <div className="space-y-2">
           <div className="flex justify-between items-center text-xs font-semibold px-1">
-            <span className="text-slate-500">System Boot & Calibration</span>
-            <span className="text-emerald-700 font-mono font-bold text-sm">{progress}%</span>
+            <span className="text-slate-400">System Boot & Calibration</span>
+            <span className="text-emerald-400 font-mono font-bold text-sm">{progress}%</span>
           </div>
 
-          <div className="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden p-0.5 border border-slate-200">
+          <div className="w-full bg-slate-800/80 h-2.5 rounded-full overflow-hidden p-0.5 border border-slate-700/80">
             <div 
-              className="bg-gradient-to-r from-emerald-600 via-teal-500 to-emerald-500 h-full rounded-full transition-all duration-300 shadow-xs"
+              className="bg-gradient-to-r from-emerald-500 via-teal-400 to-emerald-400 h-full rounded-full transition-all duration-300 shadow-xs shadow-emerald-500/50"
               style={{ width: `${progress}%` }}
             />
           </div>
         </div>
 
         {/* Live Step Checklist Box */}
-        <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-left text-xs space-y-2">
-          <div className="flex items-center gap-2.5 text-emerald-900 font-semibold text-[11px]">
+        <div className="p-3.5 rounded-2xl bg-slate-950/80 border border-slate-800 text-left text-xs space-y-2">
+          <div className="flex items-center gap-2.5 text-emerald-300 font-semibold text-[11px]">
             <span className="relative flex h-2 w-2 shrink-0">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
             <span className="truncate">{loadingSteps[activeStepIndex]?.title}</span>
           </div>
 
-          <div className="text-[10px] text-slate-500 flex items-center justify-between pt-1.5 border-t border-slate-200/70">
+          <div className="text-[10px] text-slate-400 flex items-center justify-between pt-1.5 border-t border-slate-800/80">
             <span className="flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
               <span>Clinical Rules Engine: Active</span>
             </span>
-            <span className="font-semibold text-slate-600">Local Database: Ready</span>
+            <span className="font-semibold text-slate-300">Local Database: Ready</span>
           </div>
         </div>
 
         {/* Footer Attribution */}
-        <p className="text-[10px] text-slate-400 font-medium">
+        <p className="text-[10px] text-slate-500 font-medium">
           Universal Immunization · Maternal ANC/PNC · WHO Nutrition Standards
         </p>
 
