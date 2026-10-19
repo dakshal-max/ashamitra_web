@@ -110,7 +110,7 @@ npm run dev
 ```
 
 The application will launch at:  
-👉 **`http://localhost:3000](https://ashamitra-web.onrender.com/`**
+👉 **`(https://ashamitra-web.onrender.com/)`**
 
 ### Build for Production
 
