@@ -253,7 +253,13 @@ export default function App() {
       />
 
       {/* Secondary Sub-navigation Bar */}
-      <nav className="bg-white dark:bg-[#0b1120] border-b border-slate-200 dark:border-slate-800/80 sticky top-0 z-30 shadow-2xs">
+      <nav 
+        className={`border-b sticky top-0 z-30 shadow-2xs transition-colors duration-300 ${
+          theme === 'dark' 
+            ? 'bg-[#0f172a] border-slate-800' 
+            : 'bg-slate-50/90 backdrop-blur-xs border-slate-200'
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between overflow-x-auto no-scrollbar py-1">
             <div className="flex items-center gap-1 sm:gap-2">
@@ -266,8 +272,10 @@ export default function App() {
                     onClick={() => setActiveTab(tab.id)}
                     className={`px-3 py-2 rounded-xl text-xs font-semibold flex items-center gap-2 transition whitespace-nowrap ${
                       isActive 
-                        ? 'bg-emerald-600 text-white shadow-xs' 
-                        : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/70'
+                        ? 'bg-emerald-600 text-white shadow-xs font-bold' 
+                        : theme === 'dark'
+                        ? 'text-slate-300 hover:text-white hover:bg-slate-800/80'
+                        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
                     }`}
                   >
                     <Icon className="w-3.5 h-3.5" />
@@ -279,7 +287,11 @@ export default function App() {
 
             <button
               onClick={() => setShowReportsModal(true)}
-              className="ml-3 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold flex items-center gap-1.5 transition shrink-0"
+              className={`ml-3 px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 transition shrink-0 ${
+                theme === 'dark'
+                  ? 'border-slate-700 bg-slate-800 text-slate-200 hover:bg-slate-700'
+                  : 'border-slate-300 bg-white text-slate-700 hover:bg-slate-100'
+              }`}
               title="Generate Monthly Progress Report (MPR)"
             >
               <FileText className="w-3.5 h-3.5 text-blue-500" />
