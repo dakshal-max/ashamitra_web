@@ -13,6 +13,7 @@ import NewBeneficiaryModal from './components/NewBeneficiaryModal';
 import VoiceNoteModal from './components/VoiceNoteModal';
 import ReportsModal from './components/ReportsModal';
 import WhatsAppSenderModal from './components/WhatsAppSenderModal';
+import LoadingScreen from './components/LoadingScreen';
 
 import { translations } from './data/translations';
 import { 
@@ -39,6 +40,9 @@ import {
 } from 'lucide-react';
 
 export default function App() {
+  // Loading screen state
+  const [isLoading, setIsLoading] = useState(true);
+
   // Persistence state
   const [currentLang, setCurrentLang] = useState(() => localStorage.getItem('app_lang') || 'en');
   const [currentRole, setCurrentRole] = useState(() => localStorage.getItem('app_role') || 'ASHA');
@@ -192,6 +196,10 @@ export default function App() {
     { id: 'survey', label: t.navSurvey, icon: FileSpreadsheet },
     { id: 'slides', label: t.navSlides, icon: BookOpen }
   ];
+
+  if (isLoading) {
+    return <LoadingScreen onFinish={() => setIsLoading(false)} />;
+  }
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col text-slate-900 selection:bg-emerald-100 selection:text-emerald-900">
