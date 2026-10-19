@@ -3,6 +3,8 @@
 > **Frontline Community Healthcare Assistant & Clinical Decision Support System (CDSS)**  
 > *Aligned with the National Health Mission (NHM) and the Ministry of Women and Child Development (WCD / ICDS / Poshan Abhiyaan)*
 
+🌐 **Live Hosted Website**: [https://ashamitra-web.onrender.com/](https://ashamitra-web.onrender.com/)
+
 ---
 
 ## 📖 Overview
@@ -109,8 +111,14 @@ npm install
 npm run dev
 ```
 
-The application will launch at:  
-👉 **`(https://ashamitra-web.onrender.com/)`**
+The local development server will start at: `http://localhost:3000/`
+
+---
+
+## 🌐 Live Deployment & Hosting
+
+The production application is deployed and hosted on Render:  
+🔗 **[https://ashamitra-web.onrender.com/](https://ashamitra-web.onrender.com/)**
 
 ### Build for Production
 
